@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import M from "materialize-css";
+import { Link } from 'react-router-dom';
+import { logout } from '../../store/actions/auth';
+import { connect } from 'react-redux';
 import "materialize-css/dist/css/materialize.min.css";
 
 class Dropdown extends Component {
@@ -64,20 +67,50 @@ class Dropdown extends Component {
                 <i className="material-icons green-text text-darken-4">account_circle</i>My profile
             </a>
           </li>
-          <li>
-            <a href="#!" className="orange darken-4 white-text center">
-              Sign In
-            </a>
-          </li>
-          <li>
-            <a href="#!" className="black-text center">
-              Join Now
-            </a>
-          </li>
+         {
+            this.props.isAuthenticated ?
+            
+            <li>
+              <Link 
+                to="/" 
+                onClick={() => this.props.onLogout()}
+                className="black-text center"
+                >
+                  Logout
+              </Link>
+            </li>
+
+            :
+
+            <React.Fragment>
+              <li>
+                <Link to="signin" className="orange darken-4 white-text center">
+                  Sign In
+                </Link>
+              </li>
+              <li>
+                <Link to="/signup" className="black-text center">
+                  Join Now
+                </Link>
+              </li>
+            </React.Fragment>
+          }
         </ul>
       </>
     );
   }
 }
 
-export default Dropdown;
+const mapStateToProps = state => {
+  return {
+    isAuthenticated: state.auth.token !== null
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onLogout: () => dispatch(logout())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Dropdown)
