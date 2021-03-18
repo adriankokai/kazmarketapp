@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 
-export class Title extends Component {
+export class Phone extends Component {
     render() {
         return (
             <div>
-                <h3>Ad title</h3>
-                <label htmlFor="title">title</label>
+                <h3>Phone</h3>
+                <label htmlFor="phone">phone</label>
                 <input
                     type="text"
-                    name="title"
-                    value={this.props.title}
+                    name="phone"
+                    value={this.props.phone}
                     onChange={this.props.handleChange}
                 />
                 
@@ -18,4 +18,4 @@ export class Title extends Component {
     }
 }
 
-export default Title
+export default Phone
