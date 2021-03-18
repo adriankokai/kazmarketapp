@@ -31,7 +31,7 @@ class Dropdown extends Component {
 
   render() {
     return (
-      <>
+      <React.Fragment>
         <a
           ref={Dropdown => {
             this.Dropdown = Dropdown;
@@ -48,7 +48,7 @@ class Dropdown extends Component {
 
         <ul id={"dropdown1" + this.props.id} className="dropdown-content">
           <li>
-            <a href="#!" className="black-text">
+            <a href="/myads" className="black-text">
                 <i className="material-icons green-text text-darken-4">collections</i>My Ads
             </a>
           </li>
@@ -63,7 +63,7 @@ class Dropdown extends Component {
             </a>
           </li>
           <li>
-            <a href="#!" className="black-text">
+            <a href="/profile" className="black-text">
                 <i className="material-icons green-text text-darken-4">account_circle</i>My profile
             </a>
           </li>
@@ -96,7 +96,7 @@ class Dropdown extends Component {
             </React.Fragment>
           }
         </ul>
-      </>
+      </React.Fragment>
     );
   }
 }

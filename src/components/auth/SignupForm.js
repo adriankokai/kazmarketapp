@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { authSignup } from '../../store/actions/auth';
-
+import { Link } from 'react-router-dom';
 
 export class SignupForm extends Component {
     constructor(props) {
@@ -41,35 +41,54 @@ export class SignupForm extends Component {
         return (
             <React.Fragment>
                 <form onSubmit={this.handleSubmit}>
-                    <label for="username">Username</label>
                     <input 
                         type="text" 
                         name="username"
                         value={this.state.username}
                         onChange={this.handelChange}
                     />
-                    <label for="email">Email</label>
+                    <label for="username">Username</label>
                     <input 
                         type="text" 
                         name="email"
                         value={this.state.email}
                         onChange={this.handelChange}
                     />
-                    <label for="password1">Enter Password</label>
+                    <label for="email">Email</label>
                     <input 
                         type="password" 
                         name="password1"
                         value={this.state.password1}
                         onChange={this.handelChange}
                     />
-                    <label for="password2">Re-enter Password</label>
+                    <label for="password1">Enter Password</label>
                     <input 
                         type="password" 
                         name="password2"
                         value={this.state.password2}
                         onChange={this.handelChange}
-                    /> 
-                    <input type="submit" value="submit" />
+                    />
+                    <label for="password2">Re-enter Password</label>
+                    {
+                        this.props.error !== null ?
+
+                        <p className="red-text">
+                            Something went wrong while trying to 
+                            sign you up, please try again.
+                        </p>
+
+                        :
+
+                        null
+                    } 
+                    <input type="submit" value="submit" className="btn" />
+                    <Link 
+                        to="/signin" 
+                        className="btn orange darken-4"
+                        style={{marginLeft: '10px'}}
+                        >
+                            signin instead
+                    </Link>
                 </form>
             </React.Fragment>
         )
@@ -78,8 +97,9 @@ export class SignupForm extends Component {
 
 const mapStateToProps = state => {
     return {
-        isAuthenticated: state.auth.token !== null,
-        loading: state.auth.loading
+        isAuthenticated: state.auth.token !== null && state.auth.token !== undefined,
+        loading: state.auth.loading,
+        error: state.auth.error
     }
 }
 

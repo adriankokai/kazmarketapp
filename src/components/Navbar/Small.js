@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import  { Link } from 'react-router-dom';
+import Modal from './Modal';
 
 export class Small extends Component {
     render() {
@@ -6,7 +8,7 @@ export class Small extends Component {
             <div className="navbar-fixed">
                 <nav className="green darken-4">
                     <div class="nav-wrapper green darken-4 row">
-                        <a href="#" class="brand-logo left col s3">Kaz</a>
+                        <Link to="/" class="brand-logo left col s3">Kaz</Link>
                         <ul id="nav-mobile" class="right col s9">
                             <div className="row">
                                 <li className="col s6">
@@ -15,12 +17,13 @@ export class Small extends Component {
                                 <li className="col s3">
                                     <a href="#!" className="white-text">
                                         <div className="row">
-                                            <i className="material-icons col">account_circle</i>
+                                            <Modal id={3} />
+                                            <i className="material-icons col modal-trigger" data-target="modal3">account_circle</i>
                                         </div>
                                     </a>
                                 </li>
                                 <li className="col s3">
-                                    <a href="#!" className="orange darken-4 left">Post</a>
+                                    <Link to="post_ad" className="orange darken-4 left">Post</Link>
                                 </li>
                             </div>
                         </ul>

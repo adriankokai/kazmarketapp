@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { authLogin } from '../../store/actions/auth';
+import { Link } from 'react-router-dom';
 
 export class SigninForm extends Component {
     constructor(props) {
@@ -51,11 +52,27 @@ export class SigninForm extends Component {
                         value={this.state.password}
                         onChange={this.handleChange}
                     />
+                    {
+                        this.props.error !== null ?
+
+                        <p className="red-text">something went wrong, please try again.</p>
+
+                        :
+
+                        null
+                    }
                     <input
                         type="submit"
                         value="signin"
-                        className="center"
+                        className="btn"
                     />
+                    <Link 
+                        to="/signup" 
+                        className="btn orange darken-4" 
+                        style={{marginLeft: '10px'}}
+                        >
+                            signup instead
+                    </Link>
                 </form>
             </div>
         )
@@ -64,7 +81,8 @@ export class SigninForm extends Component {
 
 const mapStateToProps = state => {
     return {
-        isAuthenticated: state.auth.token !== null
+        isAuthenticated: state.auth.token !== null && state.auth.token !== undefined,
+        error: state.auth.error
     }
 }
 
