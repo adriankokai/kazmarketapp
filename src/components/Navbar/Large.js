@@ -13,7 +13,13 @@ export class Large extends Component {
                             <ul id="nav-mobile" class="right col s9 hide-on-med-and-down">
                                 <div className="row">
                                     <li className="col s6">
-                                        <input type="search" className="white" placeholder="search" /> 
+                                        <input 
+                                            style={searchStyles} 
+                                            type="search" 
+                                            className="white" 
+                                            placeholder="search" 
+                                            onChange={this.props.searchAds}
+                                        /> 
                                     </li>
                                     <li className="col s3">
                                         <Dropdown key={1} id={1} />                                            
@@ -29,6 +35,11 @@ export class Large extends Component {
             </React.Fragment>
         )
     }
+}
+
+const searchStyles = {
+    height: '30px',
+    paddingLeft: '2px'
 }
 
 export default Large

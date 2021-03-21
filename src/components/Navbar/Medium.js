@@ -23,7 +23,13 @@ export class Medium extends Component {
                     </div>
                 </nav>
             </div>
-            <input style={searchStyle} type="search" className="white col s12" placeholder="search" />
+            <input 
+                style={searchStyle} 
+                type="search" 
+                className="white col s12" 
+                placeholder="search" 
+                onChange={this.props.searchAds}
+            />
             </React.Fragment>
         )
     }
@@ -31,6 +37,7 @@ export class Medium extends Component {
 
 const searchStyle = {
     margin: '10px 2px 10px 2px',
+    paddingLeft: '2px'
 
 }
 

@@ -12,7 +12,13 @@ export class Small extends Component {
                         <ul id="nav-mobile" class="right col s9">
                             <div className="row">
                                 <li className="col s6">
-                                    <input type="search" className="white" placeholder="search" /> 
+                                    <input 
+                                        style={searchStyles} 
+                                        type="search" 
+                                        className="white" 
+                                        placeholder="search" 
+                                        onChange={this.props.searchAds}
+                                    /> 
                                 </li>
                                 <li className="col s3">
                                     <a href="#!" className="white-text">
@@ -32,6 +38,11 @@ export class Small extends Component {
             </div>
         )
     }
+}
+
+const searchStyles = {
+    height: '30px',
+    paddingLeft: '2px'
 }
 
 export default Small
