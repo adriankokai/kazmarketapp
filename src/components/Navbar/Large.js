@@ -14,7 +14,9 @@ export class Large extends Component {
                                 <div className="row">
                                     <li className="col s6">
                                         <input 
-                                            style={searchStyles} 
+                                            style={searchStyles}
+                                            name="search"
+                                            value={this.props.search} 
                                             type="search" 
                                             className="white" 
                                             placeholder="search" 

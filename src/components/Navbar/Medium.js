@@ -25,7 +25,9 @@ export class Medium extends Component {
             </div>
             <input 
                 style={searchStyle} 
-                type="search" 
+                type="search"
+                name="search"
+                value={this.props.search} 
                 className="white col s12" 
                 placeholder="search" 
                 onChange={this.props.searchAds}

@@ -15,6 +15,8 @@ export class Small extends Component {
                                     <input 
                                         style={searchStyles} 
                                         type="search" 
+                                        name="search"
+                                        value={this.props.search}
                                         className="white" 
                                         placeholder="search" 
                                         onChange={this.props.searchAds}
