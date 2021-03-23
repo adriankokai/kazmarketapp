@@ -22,16 +22,15 @@ export const postAdFail = error => {
     }
 }
 
-export const postAd = (
-    title, category, subcategory, location, description, image1, image2, phone
-) => {
+export const postAd = (formData) => {
     return dispatch => {
         dispatch(postAdStart())
         axios.post(BACKEND_URL + 'store/post_ad/', {
-            title, category, subcategory, location, description, image1, image2, phone
+            formData
         }, {
             headers: {
-                Authorization: `token ${localStorage.getItem('token')}`
+                Authorization: `token ${localStorage.getItem('token')}`,
+                "Content-Type": "multipart/form-data"
             }
         })
         .then(res => {

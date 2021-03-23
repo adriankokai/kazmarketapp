@@ -6,6 +6,7 @@ import postAdReducer from './postAd';
 import changeSelectReducer from './changeSelect';
 import fetchAdsReducer from './fetchAds';
 import updateProfileReducer from './updateProfile';
+import searchAdsReducer from './searchAds';
 
 const rootReducer = combineReducers({
     fetchCategories: fetchCategoriesReducer,
@@ -14,7 +15,8 @@ const rootReducer = combineReducers({
     postAd: postAdReducer,
     changeSelect: changeSelectReducer,
     fetchAds: fetchAdsReducer,
-    updateProfile: updateProfileReducer
+    updateProfile: updateProfileReducer,
+    searchAds: searchAdsReducer,
     
 })
 
