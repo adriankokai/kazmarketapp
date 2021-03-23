@@ -10,7 +10,7 @@ export class Categories extends Component {
 
     render() {
         return (
-            <div className="row">
+            <div className="row center">
                 {
                     Array.isArray(this.props.categories) ?
 
