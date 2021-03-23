@@ -5,7 +5,12 @@ export class CategoryButton extends Component {
     render() {
         return (
             
-                <Link to='#!' className="black-text btn white" style={styles} >{this.props.category.name} </Link>            
+            <Link 
+                to={"ads_in_category/" + this.props.category.id + '/' + this.props.category.name } className="black-text btn white" 
+                style={styles} 
+            >
+                {this.props.category.name} 
+            </Link>            
         )
     }
 }
