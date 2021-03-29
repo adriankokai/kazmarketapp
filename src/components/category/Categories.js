@@ -54,7 +54,7 @@ const categoryButtonsStyles = {
     marginBlockEnd: '1em',
     marginInlineStart: '0px',
     marginInlineEnd: '0px',
-    paddingInlineStart: '40px',
+    paddingInlineStart: '10px',
 }
 
 const mapStateToProps = state => {
