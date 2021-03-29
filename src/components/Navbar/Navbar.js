@@ -41,7 +41,7 @@ export class Navbar extends Component {
                         search={this.state.search}
                     />
                 </div>
-                <div className="hide-on-med-and-up">
+                <div className="hide-on-med-and-up green darken-4">
                     <Small 
                         searchAds={this.searchAds} 
                         search={this.state.search}
@@ -52,10 +52,11 @@ export class Navbar extends Component {
     }
 }
 
+
 const mapDispatchToProps = dispatch => {
     return {
         onSearchAds: phrase => dispatch(searchAds(phrase))
     }
-}
+} 
 
 export default connect(null, mapDispatchToProps)(Navbar)
