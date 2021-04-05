@@ -41,7 +41,7 @@ export class Navbar extends Component {
                         search={this.state.search}
                     />
                 </div>
-                <div className="hide-on-med-and-up green darken-4">
+                <div className="hide-on-med-and-up ">
                     <Small 
                         searchAds={this.searchAds} 
                         search={this.state.search}
